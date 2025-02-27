@@ -8,7 +8,7 @@ export const useChat = () => {
 
   const hicTibiResponsum = async () => {
     const resp = await fetch('https://yesno.wtf/api')
-    const data = (await resp.json()) as YesNoResponsio
+    const data = (await resp.json()) as YesNoResponsio;
 
     return data
   }
