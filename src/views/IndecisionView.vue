@@ -3,7 +3,7 @@
     <div class="bg-blue-500 p-4 text-white justify-between items-center">
       <span>Mi esposa</span>
     </div>
-    <ChatNuntii />
+    <ChatNuntii :nuntii="nuntii"/>
     <TextusArca />
   </div>
 </template>
@@ -11,4 +11,22 @@
 <script lang="ts" setup>
 import ChatNuntii from '@/components/chat/chatNuntii.vue'
 import TextusArca from '@/components/chat/textusArca.vue'
+import type { ChatNuntius } from '@/interfaces/chat-nuntius.interface';
+import { ref } from 'vue';
+
+const nuntii = ref <ChatNuntius[]>([
+  {
+    id: new Date().getTime(),
+    nuntius: 'Quieres ir a tomar café?',
+    meusEst: true,
+  },
+
+  {
+    id: new Date().getTime()+1,
+    nuntius: 'Yes!',
+    meusEst: false,
+    imago:'https://yesno.wtf/assets/yes/13-c3082a998e7758be8e582276f35d1336.gif', 
+  }
+]);
+
 </script>
