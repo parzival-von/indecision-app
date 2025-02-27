@@ -3,12 +3,19 @@
     <div class="bg-blue-500 p-4 text-white justify-between items-center">
       <span>Mi esposa</span>
     </div>
-    <ChatNuntii />
-    <TextusArca />
+    <ChatNuntii :nuntii="nuntii"/>
+    <TextusArca @mitte-nuntius="($event)=>cumNovumNuntiu($event)"/>
   </div>
 </template>
 
 <script lang="ts" setup>
 import ChatNuntii from '@/components/chat/chatNuntii.vue'
 import TextusArca from '@/components/chat/textusArca.vue'
+import { useChat } from '@/composables/useChat';
+
+
+
+const {nuntii,cumNovumNuntiu} = useChat();
+
+
 </script>
